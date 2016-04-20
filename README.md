@@ -13,6 +13,14 @@ To do this I will probably use
   - Materializecss
 
 ## SetUp
-coming soon <3
+Install the dependencies
+```bash
+npm install
+```
+Run the server
+```bash
+node server.js
+```
+The app is now running on : http://localhost:8080/
 
 Made with <3 by adNNNN
