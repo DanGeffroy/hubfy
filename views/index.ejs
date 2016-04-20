@@ -1,26 +1,148 @@
 <!-- views/index.ejs -->
 <!doctype html>
 <html>
+
 <head>
-    <title>Node Authentication</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <style>
-        body        { padding-top:80px; }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>hubfy</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 </head>
+
 <body>
-<div class="container">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Hubfy</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#loginModal" class="modal-trigger">login <span class="fa fa-sign-in"></span></a></li>
+            </ul>
 
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#loginModal" class="modal-trigger">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
 
-        <p>Login or Register with:</p>
+    <!-- login modal Structure -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h4>Sign In <span class="fa fa-sign-in"></span></h4>
+            <!-- show any messages that come back with authentication -->
+            <% if (message.length > 0) { %>
+                <div class="chip">
+                    <%= message %>
+                        <i class="material-icons">close</i>
+                </div>
+                <% } %>
 
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+                    <!-- LOGIN FORM -->
+                    <form id="loginForm" action="/login" method="post">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="text" required="validate" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password " type="password" required class="validate" name="password">
+                                <label for="pawword">Password</label>
+                            </div>
+                        </div>
+                        <div class="row right-align">
+                            <button type="submit" class="btn waves-effect waves-light">Login <i class="material-icons right">send</i></button>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <p>Need an account? <a class="modal-trigger modal-action modal-close" href="#signUpModal">Signup</a></p>
+                            </div>
+                        </div>
+                    </form>
+        </div>
+    </div>
+        <!-- login modal Structure -->
+    <div id="signUpModal" class="modal">
+        <div class="modal-content">
+            <h4>Sign Up <span class="fa fa-sign-in"></span></h4>
+            <!-- show any messages that come back with authentication -->
+            <% if (message.length > 0) { %>
+                <div class="chip">
+                    <%= message %>
+                        <i class="material-icons">close</i>
+                </div>
+                <% } %>
+
+                    <!-- LOGIN FORM -->
+                    <form id="loginForm" action="/signup" method="post">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="text" required="validate" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password " type="password" required class="validate" name="password">
+                                <label for="pawword">Password</label>
+                            </div>
+                        </div>
+                        <div class="row right-align">
+                            <button type="submit" class="btn waves-effect waves-light">sign up <i class="material-icons right">send</i></button>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <p>Already have an account? <a class="modal-trigger modal-action modal-close" href="#loginModal">Login</a></p>
+                            </div>
+                        </div>
+                    </form>
+        </div>
+    </div>
+    
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br>
+                <br>
+                <h1 class="header center teal-text text-lighten-2">Hubfy</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">This is will be so cool, you will see</h5>
+                </div>
+                <div class="row center">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#loginModal">login <span class="fa fa-sign-in"></span></a>
+                </div>
+                <br>
+                <br>
+
+            </div>
+        </div>
+        <div class="parallax"><img src="img/background1.jpg" alt="Unsplashed background img 1"></div>
     </div>
 
-</div>
+    <!-- <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+
+            <p>Login or Register with:</p>
+
+            <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+            <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+        </div>
+
+    </div>-->
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 </body>
+
 </html>
