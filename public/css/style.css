@@ -14,13 +14,14 @@ nav ul a,
 nav .brand-logo {
   color: #ffffff;
 }
-
 p {
   line-height: 2rem;
 }
-
+.side-nav a {
+    color: #ffffff;
+}
 .button-collapse {
-  color: #26a69a;
+  color: #e65100;
 }
 
 .parallax-container {
