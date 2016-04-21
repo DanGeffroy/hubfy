@@ -141,3 +141,10 @@ a {
 .parallax-container .section {
     padding-top: 150px;
 }
+
+
+/* grid stack part*/
+
+.grid-stack-item-content{
+    background-color: #2B2B2B;
+}
