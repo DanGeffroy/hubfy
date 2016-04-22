@@ -1,5 +1,5 @@
 # Hubfy
-![alt text](https://media.giphy.com/media/hMRwHs6D80E5a/giphy.gif)
+![alt text](http://i.imgur.com/9eiGOEy.png)
 ## What?
 I want to create a platform that allow a user to create his own 'hub' with any componant
 ## Why?
@@ -16,6 +16,10 @@ To do this I will probably use
 Install the dependencies
 ```bash
 npm install
+```
+Start a mongodb database
+```bash
+mongod
 ```
 Run the server
 ```bash
