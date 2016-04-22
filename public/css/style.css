@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
 /* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
@@ -5,7 +6,15 @@
  *
  * Made By MaterializeCSS.com
  */
-
+#logo-container{
+    font-family: 'Permanent Marker', cursive;
+    color: #e65100;
+    font-size: 300%;
+}
+.pageTitle{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 600%;
+}
 body {
     background-color: #1D1F21;
 }
