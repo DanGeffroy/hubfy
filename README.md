@@ -17,6 +17,10 @@ Install the dependencies
 ```bash
 npm install
 ```
+Start a mongodb database
+```bash
+mongod
+```
 Run the server
 ```bash
 node server.js
