@@ -75,7 +75,7 @@ footer.page-footer {
 .modal-content>h4{
     color: white;
 }
-#loginModal,#signUpModal{
+.smallModal{
     width: 300px;
     background-color: #2B2B2B;
 }

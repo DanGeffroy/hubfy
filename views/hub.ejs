@@ -30,6 +30,11 @@
     </nav>
 
     <div class="container">
+        <div class="fixed-action-btn" style="top: 60px; right: 70px;">
+            <a class="btn-floating btn-large waves-effect orange darken-3 waves-light">
+                <i class="large material-icons">mode_edit</i>
+            </a>
+        </div>
 
         <div class="row">
 
@@ -51,39 +56,13 @@
         </div>
 
         <div class="grid-stack" data-gs-width="12">
-            <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="8" data-gs-y="0" data-gs-width="2" data-gs-height="2" data-gs-min-width="2" data-gs-no-resize="yes">
-                <div class="grid-stack-item-content"> <span class="fa fa-hand-o-up"></span> Drag me! </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="10" data-gs-y="0" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="0" data-gs-y="4" data-gs-width="2" data-gs-height="2">
-               <%- include componants/youtubePlayer/index %>
-            </div>
-            <div class="grid-stack-item" data-gs-x="2" data-gs-y="4" data-gs-width="2" data-gs-height="4">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="8" data-gs-y="4" data-gs-width="4" data-gs-height="2">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="0" data-gs-y="6" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="4" data-gs-y="6" data-gs-width="4" data-gs-height="2">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="8" data-gs-y="6" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content"></div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="10" data-gs-y="6" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content"></div>
-            </div>
+            <% user.componants.forEach(function(componant){ %>
+                <% var comp = componant%>
+                    <div class="grid-stack-item" data-gs-x="0" data-gs-y="4" data-gs-width="2" data-gs-height="2">
+                        <%- include('componants/'+componant.name+'/index.ejs',{comp:componant}) %>
+                    </div>
+                    <% }); %>
+
         </div>
 
     </div>

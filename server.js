@@ -14,6 +14,8 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js');
 
+var EJS = require('ejs');
+
 // configuration ===============================================================
 app.use(express.static(__dirname + '/public'));
 

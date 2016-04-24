@@ -2,8 +2,8 @@
   "name": "node-authentication",
   "main": "server.js",
   "dependencies" : {
-    "express" : "~4.0.0",           
-    "ejs" : "~0.8.5",               
+    "express" : "*",           
+    "ejs" : "*",               
     "mongoose" : "~3.8.1",          
     "passport" : "~0.1.17",         
     "passport-local" : "~0.1.6",    

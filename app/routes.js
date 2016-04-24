@@ -35,7 +35,7 @@ module.exports = function (app, passport) {
     app.get('/signup', function (req, res) {
 
         // render the page and pass in any flash data if it exists
-        res.render('signup.ejs', {
+        res.render('index.ejs', {
             message: req.flash('signupMessage')
         });
     });
@@ -77,15 +77,18 @@ module.exports = function (app, passport) {
         User.findById(req.query._id, function (err, user) {
             user.componants.forEach(function (element) {
                 if (element.name === "youtubeplayer") {
+                    /*We remove the old element*/
+                    var index = user.componants.indexOf(element);
+                    if (index > -1) {
+                       user.componants.splice(index, 1);
+                    }
                     element.url = req.query.url
+                    user.componants.push(element);
                     user.save(function (err) {
                         if (err) {
                             console.error('ERROR!');
                         }
-                        console.log("yoolo")
-                        res.render('hub.ejs', {
-                            user: user // get the user out of session and pass to template
-                        });
+                        res.send({newUrl: req.query.url});
                     });
                 }
             });

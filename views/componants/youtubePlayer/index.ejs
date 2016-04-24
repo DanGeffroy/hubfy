@@ -2,8 +2,30 @@
 <div class="grid-stack-item-content">
     <div class="row">
         <div class="youtubeContainer">
-            <iframe class="youtubePlayer" src="https://www.youtube.com/embed/videoseries?list=PLfZeR4pSmgNb_qJGpWcDsCSwkNiZUCkjO" frameborder="0" allowfullscreen></iframe>
+            <% var url = "https://www.youtube.com/embed/videoseries?list="+comp.url %>
+            <iframe id="youtubePlayer" class="youtubePlayer" src=<%= url %> frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
-    <div class="row center"><a class="waves-effect waves-light btn" href="#loginModal">Edit</a></div>
+    <div class="row center"><a class="orange darken-3 waves-effect waves-light btn modal-trigger" href="#youtubeEditModal">Edit</a></div>
 </div>
+
+<!-- Modal Structure -->
+  <div id="youtubeEditModal" class="modal smallModal">
+    <div class="modal-content">
+       <!-- LOGIN FORM -->
+                    <form id="youtubeEditForm" action="/youtubeplayer/edit" method="get">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="url" type="text" required="validate" name="url">
+                                <label for="url">Url</label>
+                                <input id="_id" type="text" hidden required="validate" name="_id" value=<%= user._id %>>
+                            </div>
+                        </div>
+                        <div class="row right-align">
+                            <button type="submit" class="btn waves-effect orange darken-3 waves-light">Save</button>
+                        </div>
+                    </form>
+    </div>
+  </div>
+<script src="componants/youtubePlayer/jquery-2.2.3.min.js"></script>
+<script src="componants/youtubePlayer/init.js"></script>
