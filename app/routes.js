@@ -108,19 +108,17 @@ module.exports = function (app, passport) {
                 }
             });
             if (!alradyContain) {
-                user.componants.push({
+                var comp = {
                     name: "youtubeplayer"
                     , url: req.query.url
-                });
+                };
+                user.componants.push(comp);
                 user.save(function (err) {
                     if (err) {
                         console.error('ERROR!');
                     }
                 });
-                res.render('hub.ejs', {
-                    layout: false
-                    , user: user
-                });
+                res.send({status:"success"});
 
             } else {
                 res.send({

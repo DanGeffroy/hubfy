@@ -27,5 +27,8 @@ function bindLinks(href, callBack) {
 function callBackYoutube(data) {
     if(data.status === "error"){
          Materialize.toast('Youtube player already on hub', 3000, 'rounded');
+    }else{
+        //refreshing
+        location.reload();
     }
 }
