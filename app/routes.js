@@ -80,7 +80,7 @@ module.exports = function (app, passport) {
                     /*We remove the old element*/
                     var index = user.componants.indexOf(element);
                     if (index > -1) {
-                       user.componants.splice(index, 1);
+                        user.componants.splice(index, 1);
                     }
                     element.url = req.query.url
                     user.componants.push(element);
@@ -88,7 +88,9 @@ module.exports = function (app, passport) {
                         if (err) {
                             console.error('ERROR!');
                         }
-                        res.send({newUrl: req.query.url});
+                        res.send({
+                            newUrl: req.query.url
+                        });
                     });
                 }
             });
@@ -96,21 +98,35 @@ module.exports = function (app, passport) {
     });
     /*Edit change the youtube url used for the youtube player*/
     app.get('/youtubeplayer/add', function (req, res) {
+        res.setHeader('Content-Type', 'application/json');
         console.log(req.query._id)
         User.findById(req.query._id, function (err, user) {
-            user.componants.push({
-                name: "youtubeplayer"
-                , url: req.query.url
-            });
-            user.save(function (err) {
-                if (err) {
-                    console.error('ERROR!');
+            var alradyContain = false;
+            user.componants.forEach(function (element) {
+                if (element.name === "youtubeplayer") {
+                    alradyContain = true;
                 }
             });
-            res.render('hub.ejs', {
-                user: user // get the user out of session and pass to template
-            });
+            if (!alradyContain) {
+                user.componants.push({
+                    name: "youtubeplayer"
+                    , url: req.query.url
+                });
+                user.save(function (err) {
+                    if (err) {
+                        console.error('ERROR!');
+                    }
+                });
+                res.render('hub.ejs', {
+                    layout: false
+                    , user: user
+                });
 
+            } else {
+                res.send({
+                    status: "error"
+                });
+            }
         });
     });
 };

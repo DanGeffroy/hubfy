@@ -30,12 +30,15 @@
     </nav>
 
     <div class="container">
-        <div class="fixed-action-btn" style="top: 60px; right: 70px;">
+        <div class="fixed-action-btn  horizontal click-to-toggle" style="top: 60px; right: 70px;">
             <a class="btn-floating btn-large waves-effect orange darken-3 waves-light">
-                <i class="large material-icons">mode_edit</i>
+                <i class="large material-icons">add</i>
             </a>
+            <ul>
+                <% var url = "/youtubeplayer/add?_id="+ user._id +"&url=PLfZeR4pSmgNb_qJGpWcDsCSwkNiZUCkjO" %>
+                <li><a id="youtubeAddButton" href=<%= url %> class="btn-floating red"><i class="material-icons">play_arrow</i></a></li>
+            </ul>
         </div>
-
         <div class="row">
 
             <!-- LOCAL INFORMATION -->
