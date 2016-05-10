@@ -2,4 +2,7 @@ node_modules
 public/node_modules
 public/app/*.js
 public/app/*.js.map
+
+public/app/widgets/*/*.js
+public/app/widgets/*/*.js.map
 public/typings

@@ -1,44 +1,23 @@
-import { Component }       from 'angular2/core';
-import { HeroService }     from './hero.service';
-import { HeroesComponent } from './heroes.component';
-import { DashboardComponent } from './dashboard.component';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import { HeroDetailComponent } from './hero-detail.component';
+import {Component} from '@angular/core';
+import {NgGrid, NgGridItem} from 'angular2-grid';
+import { UserService } from './user.service';
+import { User } from './user';
+import { OnInit } from '@angular/core';
+import { Youtubeplayer} from "./widgets/youtubeplayer/Youtubeplayer";
+
 @Component({
-  selector: 'my-app',
-  template: `
-  <h1>{{title}}</h1>
-  <nav>
-    <a [routerLink]="['Dashboard']">Dashboard</a>
-    <a [routerLink]="['Heroes']">Heroes</a>
-  </nav>
-  <router-outlet></router-outlet>
-  `,
-  styleUrls:['app/app.component.css'],
-  directives: [ROUTER_DIRECTIVES],
-  providers: [
-    ROUTER_PROVIDERS,
-    HeroService
-  ]
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html',
+    directives: [NgGrid, NgGridItem,Youtubeplayer],
+    providers: [UserService]
 })
-@RouteConfig([
-  {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
-  },
-  {
-  path: '/dashboard',
-  name: 'Dashboard',
-  component: DashboardComponent,
-  useAsDefault: true
-},
-{
-  path: '/detail/:id',
-  name: 'HeroDetail',
-  component: HeroDetailComponent
-}
-])
-export class AppComponent {
-  title = 'Tour of Heroes';
+export class AppComponent implements OnInit{
+  user : User;
+  constructor(private userService: UserService) { }
+  ngOnInit() {
+    this.getHeroes();
+  }
+  getHeroes() {
+    this.userService.getUser().then(user => this.user = user);
+  }
 }

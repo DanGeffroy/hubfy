@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'lite' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.6
+4 warn invalid config access=undefined
+5 warn invalid config https-proxy=undefined
+6 warn invalid config Must be a full url with 'http://'
+7 warn invalid config init-author-url=undefined
+8 warn invalid config Must be a full url with 'http://'
+9 warn invalid config proxy=undefined
+10 warn invalid config Must be a full url with 'http://'
+11 verbose stack Error: Cannot find module 'undefined'
+11 verbose stack     at Function.Module._resolveFilename (module.js:326:15)
+11 verbose stack     at Function.Module._load (module.js:277:25)
+11 verbose stack     at Module.require (module.js:354:17)
+11 verbose stack     at require (internal/module.js:12:17)
+11 verbose stack     at cb (C:\Program Files (x86)\nodejs\node_modules\npm\lib\npm.js:287:7)
+11 verbose stack     at C:\Program Files (x86)\nodejs\node_modules\npm\lib\npm.js:376:14
+11 verbose stack     at C:\Program Files (x86)\nodejs\node_modules\npm\lib\config\core.js:82:7
+11 verbose stack     at Array.forEach (native)
+11 verbose stack     at C:\Program Files (x86)\nodejs\node_modules\npm\lib\config\core.js:81:13
+11 verbose stack     at f (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\once\once.js:17:25)
+12 verbose cwd C:\Users\adN\Documents\lpsil\webdev\hubfy\public
+13 error Windows_NT 10.0.10586
+14 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "lite"
+15 error node v4.2.6
+16 error npm  v2.14.12
+17 error code MODULE_NOT_FOUND
+18 error Cannot find module 'undefined'
+19 error If you need help, you may report this error at:
+19 error     <https://github.com/npm/npm/issues>
+20 verbose exit [ 1, true ]

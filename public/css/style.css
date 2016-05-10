@@ -152,9 +152,9 @@ a {
 }
 
 
-/* grid stack part*/
+/* grid part*/
 
-.grid-stack-item-content{
+.grid-item{
     background-color: #2B2B2B;
 }
 

@@ -9,31 +9,33 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/gridstack.css" type="text/css" / rel="stylesheet">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <!-- 1. Load libraries -->
-    <!-- IE required polyfills, in this exact order -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
+        defaultJSExtensions: true,
         packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
+          '@angular/compiler': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/common': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/core': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/platform-browser-dynamic': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/platform-browser': { main: 'index.js', defaultExtension: 'js' }
+        },
+        map: {
+          '@angular': 'node_modules/@angular',
+          'angular2-grid': 'node_modules/angular2-grid/dist/NgGrid',
+          'rxjs': 'node_modules/rxjs'
         }
       });
-      System.import('app/main')
+      System.import('app/boot')
             .then(null, console.error.bind(console));
     </script>
 </head>
@@ -66,35 +68,6 @@
         <div class="row">
             <my-app>Loading...</my-app>
         </div>
-        <div class="row">
-
-            <!-- LOCAL INFORMATION -->
-            <div class="col-sm-6">
-                <div class="white-text">
-
-                    <strong>id</strong>:
-                    <%= user._id %>
-                        <br>
-                        <strong>email</strong>:
-                        <%= user.local.email %>
-                            <br>
-                            <strong>password</strong>:
-                            <%= user.local.password %>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="grid-stack" data-gs-width="12">
-            <% user.componants.forEach(function(componant){ %>
-                <% var comp = componant%>
-                    <div class="grid-stack-item" data-gs-x="0" data-gs-y="4" data-gs-width="2" data-gs-height="2">
-                        <%- include('componants/'+componant.name+'/index.ejs',{comp:componant}) %>
-                    </div>
-                    <% }); %>
-
-        </div>
-
     </div>
 
     <footer class="page-footer grey darken-4">
@@ -126,9 +99,7 @@
     <script src="js/materialize.js"></script>
     <script src="js/lodash.js"></script>
     <script src="js/jquery-ui.js"></script>
-    <script src="js/gridstack.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/gridstackinit.js"></script>
 </body>
 
 </html>

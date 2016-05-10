@@ -25,7 +25,7 @@
     "nodemon" : "*"
   },
     "scripts": {
-        "start": "tsc && concurrently \"tsc -w\" \"nodemon server.js\"",
+        "start": "concurrently \"npm --prefix ./public start ./public\" \"nodemon server.js\"",
         "startServer": "nodemon server.js",
         "compile": "tsc && concurrently \"tsc -w\"",
         "installPublic":"npm --prefix ./public install ./public",
