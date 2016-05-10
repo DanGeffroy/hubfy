@@ -1,5 +1,5 @@
 # Hubfy
-![alt text](http://i.imgur.com/9eiGOEy.png)
+![alt text](/preview.png)
 ## What?
 I want to create a platform that allow a user to create his own 'hub' with any componant
 ## Why?
@@ -29,4 +29,4 @@ npm start
 ```
 The app is now running on : http://localhost:8080/
 
-Made with <3 by adNNNN
+Made with <3 by Dan
