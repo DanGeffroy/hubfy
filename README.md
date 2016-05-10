@@ -13,17 +13,19 @@ To do this I will probably use
   - Materializecss
 
 ## SetUp
-Install the dependencies
-```bash
-npm install
-```
 Start a mongodb database
 ```bash
 mongod
 ```
+
+Install the dependencies
+```bash
+npm run installAll
+```
+
 Run the server
 ```bash
-node server.js
+npm start
 ```
 The app is now running on : http://localhost:8080/
 
