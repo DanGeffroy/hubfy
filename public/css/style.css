@@ -123,7 +123,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 a {
-  color: #ef6c00;  
+  color: #ef6c00;
 }
 #paralax1{
      -webkit-filter:brightness(50%);
@@ -156,4 +156,41 @@ a {
 
 .grid-stack-item-content{
     background-color: #2B2B2B;
+}
+
+
+
+/* ScrollBar stuff */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #858585;
+  border: 0px none #ffffff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #898989;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #9d9d9d;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 255, 0.0);
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: rgba(0, 0, 255, 0.0);
+}
+::-webkit-scrollbar-track:active {
+  background: rgba(0, 0, 255, 0.0);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

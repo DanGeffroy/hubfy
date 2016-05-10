@@ -1,0 +1,5 @@
+node_modules
+public/node_modules
+public/app/*.js
+public/app/*.js.map
+public/typings
