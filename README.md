@@ -8,8 +8,8 @@ I'm starting this project because i want to upgrade my skill with nodeJS and mon
 To do this I will probably use 
   - MongoDB
   - NodeJS
-  - React?
-  - Gridstack
+  - Angular2 <3
+  - angular2-grid
   - Materializecss
 
 ## SetUp
