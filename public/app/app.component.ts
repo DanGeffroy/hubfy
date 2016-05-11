@@ -4,20 +4,22 @@ import { UserService } from './user.service';
 import { User } from './user';
 import { OnInit } from '@angular/core';
 import { Youtubeplayer} from "./widgets/youtubeplayer/Youtubeplayer";
+import { Twitchplayer} from "./widgets/twitchplayer/twitchplayer";
+import { Twitchchat} from "./widgets/twitchchat/twitchchat";
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
-    directives: [NgGrid, NgGridItem,Youtubeplayer],
+    directives: [NgGrid, NgGridItem,Youtubeplayer,Twitchplayer,Twitchchat],
     providers: [UserService]
 })
 export class AppComponent implements OnInit{
   user : User;
   constructor(private userService: UserService) { }
   ngOnInit() {
-    this.getHeroes();
+    this.getUser();
   }
-  getHeroes() {
+  getUser() {
     this.userService.getUser().then(user => this.user = user);
   }
 }
