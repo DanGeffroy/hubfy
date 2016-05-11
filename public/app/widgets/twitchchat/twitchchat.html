@@ -1,8 +1,14 @@
+<div class="row handle">
+ <i class="material-icons handle">open_with</i>
+</div>
+<div id="demo-2">
+	<input  [(ngModel)]="channel" type="search" placeholder="channel" (ngModelChange)="newUrl($event)">
+</div>
 <iframe
         class="twitchChat"
         frameborder="0"
         scrolling="no"
         id="chat_embed"
-        src="http://www.twitch.tv/tarik_tv/chat"
+        [src]="src"
         >
 </iframe>
