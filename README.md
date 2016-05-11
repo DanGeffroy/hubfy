@@ -29,4 +29,4 @@ npm start
 ```
 The app is now running on : http://localhost:8080/
 
-Made with <3 by Dan
+Made with :heart: by Dan
