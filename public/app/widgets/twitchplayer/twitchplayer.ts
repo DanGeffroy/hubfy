@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { OnInit } from '@angular/core';
+import { OnInit,Input } from '@angular/core';
 
 declare var Twitch:any;
 declare var jQuery:any;
@@ -11,11 +11,11 @@ declare var jQuery:any;
 })
 export class Twitchplayer implements OnInit{
   player;
-  channel : String;
+  @Input() channel : String = "monstercat";
 
   ngOnInit(){
        var options = {
-           channel: "monstercat",
+           channel: this.channel,
            width: "100%",
            height: "100%",
        };
