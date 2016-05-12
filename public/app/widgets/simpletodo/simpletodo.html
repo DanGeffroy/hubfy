@@ -1,0 +1,19 @@
+<div class="row handle">
+ <i class="material-icons handle">open_with</i>
+</div>
+<div class="container">
+<div class="row">
+  <form (submit)="addTodo($event)">
+  <input [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield inputWhite">
+          <button  class="btn waves-effect waves-light buttonParalax right" type="submit" [disabled]="newTodo===''">Add Todo</button>
+  </form>
+  </div>
+<div class="row">
+  <ul class="center-align">
+    <li *ngFor="let todo of todos let i=index">
+          <span class="white-text" [ngClass]="{'checked': todo.complete}">{{ todo.newTodo }}</span>
+          <i (click)="deleteTodo(i)" class="material-icons green-text text-darken-1">done</i>
+    </li>
+  </ul>
+</div>
+</div>

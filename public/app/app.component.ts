@@ -6,11 +6,12 @@ import { OnInit } from '@angular/core';
 import { Youtubeplayer} from "./widgets/youtubeplayer/Youtubeplayer";
 import { Twitchplayer} from "./widgets/twitchplayer/twitchplayer";
 import { Twitchchat} from "./widgets/twitchchat/twitchchat";
+import { Simpletodo} from "./widgets/simpletodo/simpletodo";
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
-    directives: [NgGrid, NgGridItem,Youtubeplayer,Twitchplayer,Twitchchat],
+    directives: [NgGrid, NgGridItem,Youtubeplayer,Twitchplayer,Twitchchat,Simpletodo],
     providers: [UserService]
 })
 export class AppComponent implements OnInit{
