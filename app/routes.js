@@ -67,64 +67,27 @@ module.exports = function (app, passport) {
     });
 
 
-
     // =====================================
-    // Youtube ==============================
+    // Persist widget position and size ====
     // =====================================
-    /*Edit change the youtube url used for the youtube player*/
-    app.get('/youtubeplayer/edit', function (req, res) {
-        console.log(req.query._id)
-        User.findById(req.query._id, function (err, user) {
-            user.componants.forEach(function (element) {
-                if (element.name === "youtubeplayer") {
-                    /*We remove the old element*/
-                    var index = user.componants.indexOf(element);
-                    if (index > -1) {
-                        user.componants.splice(index, 1);
-                    }
-                    element.url = req.query.url
-                    user.componants.push(element);
-                    user.save(function (err) {
-                        if (err) {
-                            console.error('ERROR!');
-                        }
-                        res.send({
-                            newUrl: req.query.url
-                        });
-                    });
-                }
-            });
-        });
-    });
-    /*Edit change the youtube url used for the youtube player*/
-    app.get('/youtubeplayer/add', function (req, res) {
-        res.setHeader('Content-Type', 'application/json');
-        console.log(req.query._id)
-        User.findById(req.query._id, function (err, user) {
-            var alradyContain = false;
-            user.componants.forEach(function (element) {
-                if (element.name === "youtubeplayer") {
-                    alradyContain = true;
-                }
-            });
-            if (!alradyContain) {
-                var comp = {
-                    name: "youtubeplayer"
-                    , url: req.query.url
-                };
-                user.componants.push(comp);
-                user.save(function (err) {
-                    if (err) {
-                        console.error('ERROR!');
-                    }
-                });
-                res.send({status:"success"});
+    app.get('/hub/persistewidget', function (req, res) {
+        var id = req.query._id;
+        var widgetName = req.query.widgetName;
+        var col=  req.query.col;
+        var row = req.query.row;
+        var sizex = req.query.sizex;
+        var sizey = req.query.sizey;
+        var width = req.query.width;
+        var height = req.query.height;
 
-            } else {
-                res.send({
-                    status: "error"
-                });
-            }
+        var conditions = { "_id": id };
+        var updateStr = '{"'+widgetName+'":{"col":'+col+',"row":'+row+',"sizex":'+sizex+',"sizey":'+sizey+',"height":'+height+',"width":'+width+'}}';
+        var update = JSON.parse(updateStr);
+
+        User.findOneAndUpdate(conditions, update, {upsert:true}, function(err, doc){
+          if (err) return res.send(500, { error: err });
+          console.log("User :" + id+ " updated");
+          res.send(200);
         });
     });
 };
@@ -132,7 +95,7 @@ module.exports = function (app, passport) {
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
-    // if user is authenticated in the session, carry on 
+    // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
         return next();
 

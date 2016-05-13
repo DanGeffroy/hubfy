@@ -27,7 +27,38 @@ var userSchema = mongoose.Schema({
         email        : String,
         name         : String
     },
-      componants            : [{}]
+      simpletodo     : {
+        col:  Number,
+        row : Number,
+        sizex : Number,
+        sizey : Number,
+        width : Number,
+        height : Number
+      },
+      twitchchat     : {
+        col:  Number,
+        row : Number,
+        sizex : Number,
+        sizey : Number,
+        width : Number,
+        height : Number
+      },
+      twitchplayer     : {
+        col:  Number,
+        row : Number,
+        sizex : Number,
+        sizey : Number,
+        width : Number,
+        height : Number
+      },
+      youtubeplayer     : {
+        col:  Number,
+        row : Number,
+        sizex : Number,
+        sizey : Number,
+        width : Number,
+        height : Number
+      }
 
 });
 

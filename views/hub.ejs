@@ -34,6 +34,7 @@
           '@angular/compiler': { main: 'index.js', defaultExtension: 'js' },
           '@angular/common': { main: 'index.js', defaultExtension: 'js' },
           '@angular/core': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/http': { main: 'index.js', defaultExtension: 'js' },
           '@angular/platform-browser-dynamic': { main: 'index.js', defaultExtension: 'js' },
           '@angular/platform-browser': { main: 'index.js', defaultExtension: 'js' }
         },
@@ -64,15 +65,6 @@
     </nav>
 
     <div class="container">
-        <div class="fixed-action-btn  horizontal click-to-toggle" style="top: 60px; right: 70px;">
-            <a class="btn-floating btn-large waves-effect orange darken-3 waves-light">
-                <i class="large material-icons">add</i>
-            </a>
-            <ul>
-                <% var url = "/youtubeplayer/add?_id="+ user._id +"&url=PLfZeR4pSmgNb_qJGpWcDsCSwkNiZUCkjO" %>
-                <li><a id="youtubeAddButton" href=<%= url %> class="btn-floating red"><i class="material-icons">play_arrow</i></a></li>
-            </ul>
-        </div>
         <div class="row">
             <my-app>
             <div class="row"></div>

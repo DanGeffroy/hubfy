@@ -8,6 +8,8 @@ import { Youtubeplayer} from "./widgets/youtubeplayer/Youtubeplayer";
 import { Twitchplayer} from "./widgets/twitchplayer/twitchplayer";
 import { Twitchchat} from "./widgets/twitchchat/twitchchat";
 import { Simpletodo} from "./widgets/simpletodo/simpletodo";
+import 'rxjs/add/operator/map';
+
 
 @Component({
     selector: 'my-app',
@@ -17,7 +19,7 @@ import { Simpletodo} from "./widgets/simpletodo/simpletodo";
 })
 export class AppComponent implements OnInit{
   user : User;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
   ngOnInit() {
     this.getUser();
   }
@@ -25,11 +27,13 @@ export class AppComponent implements OnInit{
     this.userService.getUser().then(user => this.user = user);
   }
   onDragStop($event,widgetName){
-    console.log(widgetName);
-    console.log($event);
+    this.persisteWidget($event,widgetName);
   }
   onResizeStop($event,widgetName){
-    console.log(widgetName);
-    console.log($event);
+    this.persisteWidget($event,widgetName);
+  }
+
+  persisteWidget($event,widgetName){
+    this.userService.persisteWidget($event,widgetName).subscribe((result) => console.log(result));
   }
 }
