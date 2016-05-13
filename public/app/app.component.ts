@@ -24,7 +24,11 @@ export class AppComponent implements OnInit{
     this.getUser();
   }
   getUser() {
-    this.userService.getUser().then(user => this.user = user);
+    this.userService.getUser().subscribe(function(res){
+            this.user = res;
+            console.log(this.user);
+          }
+    );
   }
   onDragStop($event,widgetName){
     this.persisteWidget($event,widgetName);

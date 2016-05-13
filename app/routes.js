@@ -90,6 +90,21 @@ module.exports = function (app, passport) {
           res.send(200);
         });
     });
+
+    // =====================================
+    // Get user by id ======================
+    // =====================================
+    app.get('/hub/getUserById', function (req, res) {
+        var id = req.query._id;
+        var conditions = { "_id": id };
+
+
+        User.findOne(conditions, function(err, doc){
+          if (err) return res.send(500, { error: err });
+          console.log(doc);
+          res.send(doc);
+        });
+    });
 };
 
 // route middleware to make sure a user is logged in

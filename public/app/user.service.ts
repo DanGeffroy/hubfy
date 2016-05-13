@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http'
-import { USER } from './mock-user';
 
 @Injectable()
 export class UserService {
 
   constructor(private http: Http) {}
   getUser() {
-    return Promise.resolve(USER);
+    var _id = "573614e645e0bf4c26e512de";
+    var route = "./hub/getUserById?_id="+_id;
+
+    return this.http.get(route).map(res => res.json())
   }
   persisteWidget($event,widgetName){
 
