@@ -24,8 +24,12 @@ export class AppComponent implements OnInit{
   getUser() {
     this.userService.getUser().then(user => this.user = user);
   }
-  onDragStop($event){
+  onDragStop($event,widgetName){
+    console.log(widgetName);
     console.log($event);
-    console.log("whut");
+  }
+  onResizeStop($event,widgetName){
+    console.log(widgetName);
+    console.log($event);
   }
 }
