@@ -4,15 +4,15 @@
     <youtubeplayer></youtubeplayer>
   </div>
 
-  <div class="grid-item" [ngGridItem]="{'sizex': 2, 'sizey': 1, 'dragHandle': '.handle'}">
+  <div class="grid-item" [ngGridItem]="{'sizex': 2, 'sizey': 1, 'dragHandle': '.handle'}" (onDragStop)="onDragStop($event)">
     <twitchplayer></twitchplayer>
   </div>
 
-  <div class="grid-item" [ngGridItem]="{'sizex': 2, 'sizey': 1 ,'dragHandle': '.handle'}">
+  <div class="grid-item" [ngGridItem]="{'sizex': 2, 'sizey': 1 ,'dragHandle': '.handle'}"  (onDragStop)="onDragStop($event)">
     <twitchchat></twitchchat>
   </div>
 
-  <div class="grid-item" [ngGridItem]="{'sizex': 2, 'sizey': 1 ,'dragHandle': '.handle'}">
+  <div class="grid-item" [ngGridItem]="{'sizex': 2, 'sizey': 1 ,'dragHandle': '.handle'}"  (onDragStop)="onDragStop($event)">
     <simpletodo></simpletodo>
   </div>
 </div>

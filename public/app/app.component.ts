@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {NgGrid, NgGridItem} from 'angular2-grid';
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+import {NgGrid, NgGridItem, NgGridItemEvent} from 'angular2-grid';
 import { UserService } from './user.service';
 import { User } from './user';
 import { OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { Simpletodo} from "./widgets/simpletodo/simpletodo";
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
-    directives: [NgGrid, NgGridItem,Youtubeplayer,Twitchplayer,Twitchchat,Simpletodo],
+    directives: [CORE_DIRECTIVES, NgGrid, NgGridItem,Youtubeplayer,Twitchplayer,Twitchchat,Simpletodo, FORM_DIRECTIVES],
     providers: [UserService]
 })
 export class AppComponent implements OnInit{
@@ -22,5 +23,9 @@ export class AppComponent implements OnInit{
   }
   getUser() {
     this.userService.getUser().then(user => this.user = user);
+  }
+  onDragStop($event){
+    console.log($event);
+    console.log("whut");
   }
 }
