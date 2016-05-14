@@ -22,6 +22,8 @@ export class User {
       name         : String
   };
     simpletodo     : {
+      fixed: Boolean,
+      dragHandle:String,
       col:  Number,
       row : Number,
       sizex : Number,
@@ -30,6 +32,8 @@ export class User {
       height : Number
     };
     twitchchat     : {
+      fixed: Boolean,
+      dragHandle:String,
       col:  Number,
       row : Number,
       sizex : Number,
@@ -38,6 +42,8 @@ export class User {
       height : Number
     };
     twitchplayer     : {
+      fixed: Boolean,
+      dragHandle:String,
       col:  Number,
       row : Number,
       sizex : Number,
@@ -46,6 +52,8 @@ export class User {
       height : Number
     };
     youtubeplayer     : {
+      fixed: Boolean,
+      dragHandle:String,
       col:  Number,
       row : Number,
       sizex : Number,

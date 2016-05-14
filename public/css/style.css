@@ -175,7 +175,21 @@ a {
 	background-color: rgba(255,255,255, 0.1);
 }
 
-
+@media (max-width: 767px) {
+	.grid {
+		width: 100% !important;
+		height: auto !important;
+		padding: 10px;
+	}
+	.grid-item {
+		position: static !important;
+		width: 100% !important;
+		margin-bottom: 10px;
+	}
+	.grid-item:last-child {
+		margin-bottom: 0;
+	}
+}
 
 /* ScrollBar stuff */
 ::-webkit-scrollbar {

@@ -81,7 +81,7 @@ module.exports = function (app, passport) {
         var height = req.query.height;
 
         var conditions = { "_id": id };
-        var updateStr = '{"'+widgetName+'":{"col":'+col+',"row":'+row+',"sizex":'+sizex+',"sizey":'+sizey+',"height":'+height+',"width":'+width+'}}';
+        var updateStr = '{"'+widgetName+'":{"col":'+col+',"row":'+row+',"sizex":'+sizex+',"sizey":'+sizey+',"height":'+height+',"width":'+width+', "fixed" : true, "dragHandle" : ".handle"}}';
         var update = JSON.parse(updateStr);
 
         User.findOneAndUpdate(conditions, update, {upsert:true}, function(err, doc){

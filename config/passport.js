@@ -103,10 +103,10 @@ module.exports = function(passport) {
                 // set the user's local credentials
                 newUser.local.email    = email;
                 newUser.local.password = newUser.generateHash(password);
-                newUser.simpletodo = {'dragHandle': '.handle'};
-                newUser.youtubeplayer = {'dragHandle': '.handle'};
-                newUser.twitchchat = {'dragHandle': '.handle'};
-                newUser.twitchplayer = {'dragHandle': '.handle'};
+                newUser.simpletodo = {'dragHandle': '.handle','fixed': true};
+                newUser.youtubeplayer = {'dragHandle': '.handle','fixed': true};
+                newUser.twitchchat = {'dragHandle': '.handle','fixed': true};
+                newUser.twitchplayer = {'dragHandle': '.handle','fixed': true};
 
                 // save the user
                 newUser.save(function(err) {

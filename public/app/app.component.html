@@ -1,19 +1,19 @@
 
   <h4 class="white-text center-align">My hub</h4>
-  <div  *ngIf="user" class="grid" [ngGrid]="{'max_cols': 6, 'auto_resize': true}">
-    <div class="grid-item" [ngGridItem]="{'sizex': 2, 'sizey': 1}" (onDragStop)="onDragStop($event,'twitchplayer')" (onResizeStop)="onResizeStop($event,'twitchplayer')">
+  <div *ngIf="user" class="grid" [ngGrid]="{'max_cols': 6, 'auto_resize': true}">
+    <div class="grid-item" [ngGridItem]="user.youtubeplayer" (onDragStop)="onDragStop($event,'youtubeplayer')" (onResizeStop)="onResizeStop($event,'youtubeplayer')" (onItemChange)="onItemChange($event,'youtubeplayer')">
       <youtubeplayer></youtubeplayer>
     </div>
 
-    <div class="grid-item" [ngGridItem]="user.twitchplayer" (onDragStop)="onDragStop($event,'twitchplayer')" (onResizeStop)="onResizeStop($event,'twitchplayer')">
+    <div class="grid-item" [ngGridItem]="user.twitchplayer" (onDragStop)="onDragStop($event,'twitchplayer')" (onResizeStop)="onResizeStop($event,'twitchplayer')" (onItemChange)="onItemChange($event,'twitchplayer')">
       <twitchplayer></twitchplayer>
     </div>
 
-    <div class="grid-item" [ngGridItem]="user.twitchchat"  (onDragStop)="onDragStop($event,'twitchchat')" (onResizeStop)="onResizeStop($event,'twitchchat')">
+    <div class="grid-item" [ngGridItem]="user.twitchchat"  (onDragStop)="onDragStop($event,'twitchchat')" (onResizeStop)="onResizeStop($event,'twitchchat')" (onItemChange)="onItemChange($event,'twitchchat')">
       <twitchchat></twitchchat>
     </div>
 
-    <div class="grid-item" [ngGridItem]="user.simpletodo"  (onDragStop)="onDragStop($event,'simpletodo')" (onResizeStop)="onResizeStop($event,'simpletodo')">
+    <div class="grid-item" [ngGridItem]="user.simpletodo"  (onDragStop)="onDragStop($event,'simpletodo')" (onResizeStop)="onResizeStop($event,'simpletodo')" (onItemChange)="onItemChange($event,'simpletodo')">
       <simpletodo></simpletodo>
     </div>
   </div>

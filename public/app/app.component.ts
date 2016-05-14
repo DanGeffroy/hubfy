@@ -37,7 +37,12 @@ export class AppComponent implements OnInit{
     this.persisteWidget($event,widgetName);
   }
 
+  onItemChange($event,widgetName){
+    this.persisteWidget($event,widgetName);
+  }
+
   persisteWidget($event,widgetName){
+    console.log(widgetName);
     this.userService.persisteWidget($event,widgetName).subscribe((result) => console.log(result));
   }
 }
