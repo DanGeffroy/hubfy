@@ -24,11 +24,11 @@ module.exports = function(passport) {
             done(err, user);
         });
     });
-    
-    
-    
-    
-        
+
+
+
+
+
     // =========================================================================
     // LOCAL LOGIN =============================================================
     // =========================================================================
@@ -63,9 +63,9 @@ module.exports = function(passport) {
         });
 
     }));
-    
-    
-    
+
+
+
     // =========================================================================
     // LOCAL SIGNUP ============================================================
     // =========================================================================
@@ -103,7 +103,10 @@ module.exports = function(passport) {
                 // set the user's local credentials
                 newUser.local.email    = email;
                 newUser.local.password = newUser.generateHash(password);
-                newUser.componants = [];
+                newUser.simpletodo = {'dragHandle': '.handle'};
+                newUser.youtubeplayer = {'dragHandle': '.handle'};
+                newUser.twitchchat = {'dragHandle': '.handle'};
+                newUser.twitchplayer = {'dragHandle': '.handle'};
 
                 // save the user
                 newUser.save(function(err) {
@@ -113,7 +116,7 @@ module.exports = function(passport) {
                 });
             }
 
-        });    
+        });
 
         });
 

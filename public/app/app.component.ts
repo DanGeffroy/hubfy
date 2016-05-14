@@ -18,17 +18,17 @@ import 'rxjs/add/operator/map';
     providers: [UserService]
 })
 export class AppComponent implements OnInit{
+
   user : User;
-  constructor(private userService: UserService) {}
+
+  constructor(private userService: UserService) {
+  }
   ngOnInit() {
-    this.getUser();
+      this.getUser();
   }
   getUser() {
-    this.userService.getUser().subscribe(function(res){
-            this.user = res;
-            console.log(this.user);
-          }
-    );
+    this.userService.getUser().subscribe(
+                     user => this.user = user);
   }
   onDragStop($event,widgetName){
     this.persisteWidget($event,widgetName);

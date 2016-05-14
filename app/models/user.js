@@ -28,6 +28,7 @@ var userSchema = mongoose.Schema({
         name         : String
     },
       simpletodo     : {
+        dragHandle:String,
         col:  Number,
         row : Number,
         sizex : Number,
@@ -36,6 +37,7 @@ var userSchema = mongoose.Schema({
         height : Number
       },
       twitchchat     : {
+        dragHandle:String,
         col:  Number,
         row : Number,
         sizex : Number,
@@ -44,6 +46,7 @@ var userSchema = mongoose.Schema({
         height : Number
       },
       twitchplayer     : {
+        dragHandle:String,
         col:  Number,
         row : Number,
         sizex : Number,
@@ -52,6 +55,7 @@ var userSchema = mongoose.Schema({
         height : Number
       },
       youtubeplayer     : {
+        dragHandle:String,
         col:  Number,
         row : Number,
         sizex : Number,
