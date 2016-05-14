@@ -29,4 +29,10 @@ npm start
 ```
 The app is now running on : http://localhost:8080/
 
+## TODO
+ - add persisance for widget spacifique data
+ - Make more screen of the app
+ - update youtubeplayer widget
+
+
 Made with :heart: by Dan
