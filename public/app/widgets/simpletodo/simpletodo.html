@@ -9,11 +9,10 @@
   </form>
   </div>
 <div class="row">
-  <ul class="center-align">
-    <li *ngFor="let todo of todos let i=index">
-          <span class="white-text" [ngClass]="{'checked': todo.complete}">{{ todo.newTodo }}</span>
-          <i (click)="deleteTodo(i)" class="material-icons green-text text-darken-1">done</i>
-    </li>
-  </ul>
+  <div class="center-align">
+    <div class="lineTodo" *ngFor="let todo of todos let i=index">
+          <div class="chip" [ngClass]="{'checked': todo.complete}">{{ todo.newTodo }} <i (click)="deleteTodo(i)" class="material-icons">close</i></div>
+    </div>
+  </div>
 </div>
 </div>
