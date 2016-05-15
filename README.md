@@ -33,6 +33,7 @@ The app is now running on : http://localhost:8080/
  - add persisance for widget spacifique data
  - Make more screen of the app
  - update youtubeplayer widget
-
+ - Make a new landing page with screen and texts
+ - Make a weather widget
 
 Made with :heart: by Dan
