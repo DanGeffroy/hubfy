@@ -1,1 +1,8 @@
-<iframe id="youtubePlayer" class="youtubePlayer" src="https://www.youtube.com/embed/videoseries?list=PLfZeR4pSmgNb_qJGpWcDsCSwkNiZUCkjO" frameborder="0" allowfullscreen></iframe>
+<div class="row handle">
+ <i class="material-icons handle">open_with</i>
+</div>
+<div id="demo-2">
+	<input  [(ngModel)]="channel" type="search" placeholder="channel" (ngModelChange)="newUrl($event)">
+</div>
+
+<iframe id="youtubePlayer" class="youtubePlayer" [src]="src" frameborder="0" allowfullscreen></iframe>
