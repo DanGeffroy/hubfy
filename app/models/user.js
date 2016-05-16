@@ -66,6 +66,16 @@ var userSchema = mongoose.Schema({
         sizey : Number,
         width : Number,
         height : Number
+      },
+      weather     : {
+        fixed: Boolean,
+        dragHandle:String,
+        col:  Number,
+        row : Number,
+        sizex : Number,
+        sizey : Number,
+        width : Number,
+        height : Number
       }
 
 });

@@ -16,4 +16,8 @@
     <div class="grid-item todoList" [ngGridItem]="user.simpletodo"  (onDragStop)="onDragStop($event,'simpletodo')" (onResizeStop)="onResizeStop($event,'simpletodo')" (onItemChange)="onItemChange($event,'simpletodo')">
       <simpletodo></simpletodo>
     </div>
+
+    <div class="grid-item" [ngGridItem]="user.weather"  (onDragStop)="onDragStop($event,'weather')" (onResizeStop)="onResizeStop($event,'weather')" (onItemChange)="onItemChange($event,'weather')">
+      <weather></weather>
+    </div>
   </div>

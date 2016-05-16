@@ -1,0 +1,101 @@
+.weather1 {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    width: 98%;
+    height: 98%;
+}
+.handle {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: white;
+    z-index: 999;
+}
+
+.weather__widget {
+	padding: 15px;
+	width: 190px;
+	height: 345px;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 15px;
+	background-color: #EEEEEE;
+}
+.weather__sub {
+	background-color: #EEEEEE;
+	background: url(../img/input.jpg);
+	background-size: 100%;
+	padding: 15px;
+	width: 190px;
+	height: 345px;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 15px;
+}
+.weather__img {
+	width: 75px;
+	height: 75px;
+}
+.weather__name-city {
+	cursor: pointer;
+	text-shadow: black 0.0em 0.0em 0.2em;
+	vertical-align: 1px;
+}
+.weather__checkbox {
+	cursor: pointer;
+}
+.weather__main-temp {
+	font-size: 22px;
+	padding-left: 10px;
+}
+.weather__input {
+	border: none;
+	border-bottom: 2px solid #729AB9;
+	background-color: rgba(0,0,0,0);
+	color: #fff;
+	text-shadow: black 0.0em 0.0em 0.2em;
+	width: 100%;
+	margin-bottom: 5px;
+}
+.weather__wrapper {
+	position: relative;
+	top: 155px;
+	text-shadow: black 0.0em 0.0em 0.2em;
+}
+.weather__input:focus {
+	outline: none;
+}
+.weather__info {
+	line-height: 20px;
+}
+.weather__input__label {
+	text-shadow: black 0.0em 0.0em 0.2em;
+}
+.autocomplete-suggestions {
+	border: 1px solid #999;
+	background-color: rgba(255, 255, 255, 0.56);
+	overflow: auto;
+	color: #438BC0;
+	display: none;
+}
+.autocomplete-suggestion {
+	padding: 2px 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: pointer;
+}
+.autocomplete-selected {
+	background: #F0F0F0;
+}
+.autocomplete-group {
+	padding: 2px 5px;
+}
+.autocomplete-suggestions strong {
+	font-weight: normal;
+	color: #3399FF;
+}
+.autocomplete-group strong {
+	display: block;
+	border-bottom: 1px solid #000;
+}

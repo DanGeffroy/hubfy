@@ -225,3 +225,8 @@ a {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+.weather__widget span{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
