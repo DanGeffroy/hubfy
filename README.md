@@ -36,7 +36,7 @@ The app is now running on : http://localhost:8080/
  - simple todo list
  - weather widget where you can select your city
 
-## Idea of futur widgets : 
+## Idea for futur widgets : 
  - quicknote widget
  - timer
  - G-map widget
