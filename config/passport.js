@@ -107,6 +107,7 @@ module.exports = function(passport) {
                 newUser.youtubeplayer = {'dragHandle': '.handle','fixed': true};
                 newUser.twitchchat = {'dragHandle': '.handle','fixed': true};
                 newUser.twitchplayer = {'dragHandle': '.handle','fixed': true};
+                newUser.quicknote = {'dragHandle': '.handle','fixed': true};
 
                 // save the user
                 newUser.save(function(err) {
