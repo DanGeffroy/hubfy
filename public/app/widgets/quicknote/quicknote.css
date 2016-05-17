@@ -1,8 +1,33 @@
-
+.containerSmall{
+  padding-right: 50px;
+  padding-left: 50px;
+}
 .handle {
   position: absolute;
   top: 0px;
   right: 10px;
   color: white;
     z-index: 999;
+}
+
+.modalCloser{
+    position: absolute;
+    top: 0px;
+    right: -15px;
+}
+
+.notes{
+  display: inline-block;
+    position:relative
+}
+
+.note{
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  position:relative
+}
+
+.btn{
+  width: 100%;
 }

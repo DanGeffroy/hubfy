@@ -17,7 +17,7 @@
       <simpletodo></simpletodo>
     </div>
 
-    <div class="grid-item" [ngGridItem]="user.quicknote"  (onDragStop)="onDragStop($event,'quicknote')" (onResizeStop)="onResizeStop($event,'quicknote')" (onItemChange)="onItemChange($event,'quicknote')">
+    <div class="grid-item todoList" [ngGridItem]="user.quicknote"  (onDragStop)="onDragStop($event,'quicknote')" (onResizeStop)="onResizeStop($event,'quicknote')" (onItemChange)="onItemChange($event,'quicknote')">
       <quicknote></quicknote>
     </div>
   </div>
