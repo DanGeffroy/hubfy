@@ -9,7 +9,7 @@ import { Twitchplayer} from "./widgets/twitchplayer/twitchplayer";
 import { Twitchchat} from "./widgets/twitchchat/twitchchat";
 import { Simpletodo} from "./widgets/simpletodo/simpletodo";
 import { Weather} from "./widgets/weather/weather";
-
+import { Quicknote} from "./widgets/quicknote/quicknote";
 import 'rxjs/add/operator/map';
 
 
@@ -17,7 +17,7 @@ import 'rxjs/add/operator/map';
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     styleUrls:['app/app.component.css'],
-    directives: [CORE_DIRECTIVES, NgGrid, NgGridItem,Youtubeplayer,Twitchplayer,Twitchchat,Simpletodo, FORM_DIRECTIVES,Weather],
+    directives: [CORE_DIRECTIVES, NgGrid, NgGridItem,Youtubeplayer,Twitchplayer,Twitchchat,Simpletodo, FORM_DIRECTIVES,Weather, Quicknote],
     providers: [UserService]
 })
 export class AppComponent implements OnInit{

@@ -29,11 +29,25 @@ npm start
 ```
 The app is now running on : http://localhost:8080/
 
+## Available widgets for now : 
+ - youtube playlist player
+ - twitch player
+ - twitch chat (independent of the twitch player)
+ - simple todo list
+ - weather widget where you can select your city
+
+## Idea for futur widgets : 
+ - quicknote widget
+ - timer
+ - G-map widget
+Feel free to contribute! I will accept any pull request if they are intresting :D
+
 ## TODO
  - add persisance for widget spacifique data
  - Make more screen of the app
- - update youtubeplayer widget
+ - <del>update youtubeplayer widget</del>
  - Make a new landing page with screen and texts
- - Make a weather widget
+ - re-Make the weather widget using angular2
+ - Make a live version of the app (without dbs)
 
 Made with :heart: by Dan

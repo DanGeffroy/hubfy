@@ -20,4 +20,7 @@
     <div class="grid-item" [ngGridItem]="user.weather"  (onDragStop)="onDragStop($event,'weather')" (onResizeStop)="onResizeStop($event,'weather')" (onItemChange)="onItemChange($event,'weather')">
       <weather></weather>
     </div>
+    <div class="grid-item todoList" [ngGridItem]="user.quicknote"  (onDragStop)="onDragStop($event,'quicknote')" (onResizeStop)="onResizeStop($event,'quicknote')" (onItemChange)="onItemChange($event,'quicknote')">
+      <quicknote></quicknote>
+    </div>
   </div>

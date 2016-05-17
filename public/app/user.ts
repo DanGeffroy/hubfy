@@ -71,4 +71,14 @@ export class User {
       width : Number,
       height : Number
     };
+    quicknote     : {
+      fixed: Boolean,
+      dragHandle:String,
+      col:  Number,
+      row : Number,
+      sizex : Number,
+      sizey : Number,
+      width : Number,
+      height : Number
+    };
 }
