@@ -1,6 +1,6 @@
 
   <h4 class="white-text center-align">My hub</h4>
-  <div *ngIf="user" class="grid" [ngGrid]="{'max_cols': 6, 'auto_resize': true}">
+  <div *ngIf="user" class="grid" [ngGrid]="{'max_cols': 7,'max_rows': 0, 'auto_resize': true, 'row_height': 140}">
     <div class="grid-item" [ngGridItem]="user.youtubeplayer" (onDragStop)="onDragStop($event,'youtubeplayer')" (onResizeStop)="onResizeStop($event,'youtubeplayer')" (onItemChange)="onItemChange($event,'youtubeplayer')">
       <youtubeplayer></youtubeplayer>
     </div>
