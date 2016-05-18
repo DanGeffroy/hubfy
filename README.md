@@ -1,4 +1,4 @@
-# Hubfy
+# Hubfy (WIP)
 ![alt text](/preview.png)
 ## What?
 I want to create a platform that allow a user to create his own 'hub' with any componant
