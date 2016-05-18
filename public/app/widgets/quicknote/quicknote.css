@@ -2,13 +2,7 @@
   padding-right: 50px;
   padding-left: 50px;
 }
-.handle {
-  position: absolute;
-  top: 0px;
-  right: 10px;
-  color: white;
-    z-index: 999;
-}
+
 
 .modalCloser{
     position: absolute;

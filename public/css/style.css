@@ -226,6 +226,19 @@ a {
   background: transparent;
 }
 
+
+.handle {
+  display:none;
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: white;
+    z-index: 999;
+}
+.grid-item:hover .handle { display:block; }
+
+
+
 .weather__widget span{
     color: white;
 }

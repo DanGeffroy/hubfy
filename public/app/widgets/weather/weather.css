@@ -5,14 +5,6 @@
     width: 98%;
     height: 98%;
 }
-.handle {
-  position: absolute;
-  top: 0px;
-  right: 10px;
-  color: white;
-    z-index: 999;
-}
-
 .weather__widget {
 	padding: 15px;
 	width: 190px;
