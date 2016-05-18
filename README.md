@@ -2,6 +2,7 @@
 ![alt text](/preview.png)
 ## What?
 I want to create a platform that allow a user to create his own 'hub' with any componant
+![alt text](/wip.png)
 ## Why?
 I'm starting this project because i want to upgrade my skill with nodeJS and mongoDB database
 ## How?
@@ -35,11 +36,13 @@ The app is now running on : http://localhost:8080/
  - twitch chat (independent of the twitch player)
  - simple todo list
  - weather widget where you can select your city
+ - quicknote widget
 
 ## Idea for futur widgets : 
- - quicknote widget
  - timer
  - G-map widget
+ - Twitter
+
 Feel free to contribute! I will accept any pull request if they are intresting :D
 
 ## How to add a new widget : 
