@@ -4,7 +4,7 @@ import {NgGrid, NgGridItem, NgGridItemEvent} from 'angular2-grid';
 import { UserService } from './user.service';
 import { User } from './user';
 import { OnInit } from '@angular/core';
-import { Youtubeplayer} from "./widgets/youtubeplayer/Youtubeplayer";
+import { Youtubeplayer} from "./widgets/youtubeplayer/youtubeplayer";
 import { Twitchplayer} from "./widgets/twitchplayer/twitchplayer";
 import { Twitchchat} from "./widgets/twitchchat/twitchchat";
 import { Simpletodo} from "./widgets/simpletodo/simpletodo";
