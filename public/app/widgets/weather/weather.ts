@@ -11,7 +11,7 @@ declare var jQuery:any;
 export class Weather implements OnInit{
   ngOnInit(){
     jQuery('.weather1').weather({
-  		city: 'Kharkiv, UA',
+  		city: 'Nantes',
   		tempUnit: 'C',
   		displayDescription: true,
   		displayMinMaxTemp: true,

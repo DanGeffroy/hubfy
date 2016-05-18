@@ -227,6 +227,10 @@ a {
 }
 
 .weather__widget span{
-    background-color: rgba(0, 0, 0, 0.5);
     color: white;
+}
+.weather__main-temp{
+  margin-top: 75px;
+  color: #ef6c00 !important;
+  font-size: 250%;
 }

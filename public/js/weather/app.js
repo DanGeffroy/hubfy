@@ -32,31 +32,31 @@
 
 	$.fn[pluginName] = function (options) {
 		this.each(function() {
-			if (!$.data(this, "plugin_" + pluginName)) 
+			if (!$.data(this, "plugin_" + pluginName))
 				$.data(this, "plugin_" + pluginName, new Plugin(this, options));
 		});
 		return this;
 	};
 
-	var icons = {		
-		'01d': 'sunny',		
-		'01n': 'moon',		
-		'02d': 'cloudy_day',		
-		'02n': 'cloudy_night',		
-		'03d': 'cloudy_day',		
-		'03n': 'cloudy_night',		
-		'04d': 'overcast',		
-		'04n': 'overcast',		
-		'09d': 'rain',		
-		'09n': 'rain',		
-		'10d': 'rain',		
-		'10n': 'rain',		
-		'11d': 'thunderstorm',		
-		'11n': 'thunderstorm',		
-		'13d': 'snowy',		
-		'13n': 'snowy',		
-		'50d': 'fog',		
-		'50n': 'fog'		
+	var icons = {
+		'01d': 'sunny',
+		'01n': 'moon',
+		'02d': 'cloudy_day',
+		'02n': 'cloudy_night',
+		'03d': 'cloudy_day',
+		'03n': 'cloudy_night',
+		'04d': 'overcast',
+		'04n': 'overcast',
+		'09d': 'rain',
+		'09n': 'rain',
+		'10d': 'rain',
+		'10n': 'rain',
+		'11d': 'thunderstorm',
+		'11n': 'thunderstorm',
+		'13d': 'snowy',
+		'13n': 'snowy',
+		'50d': 'fog',
+		'50n': 'fog'
 	};
 
 	$.extend(Plugin.prototype, {
@@ -94,7 +94,7 @@
 			var element = $(this.element);
 			var promise = $.Deferred();
 			var autocompleteSettings = {
-				url: "http://gd.geobytes.com/AutoCompleteCity", 
+				url: "http://gd.geobytes.com/AutoCompleteCity",
 				minChars: 3,
 				autocompleteOnSelect: this._onSelect.bind(this, promise)
 			}
@@ -109,11 +109,11 @@
 
 		_getWeather: function(data) {
 			var request = '';
-			if (!data) 
+			if (!data)
 				request = this._parseURL({q: 'Kharkiv'}); else
-			if ('city' in data)	
+			if ('city' in data)
 				request = this._parseURL({q: data.city}); else
-			if ('latitude' in data && 'longitude' in data) 
+			if ('latitude' in data && 'longitude' in data)
 				request = this._parseURL({lat: data.latitude, lon: data.longitude}); else
 			request = this._parseURL({q: 'Kharkiv'});
 			return $.get(request)
@@ -139,7 +139,7 @@
 					wind: data.list[0].wind
 				};
 				return obj;
-			} else 
+			} else
 			return $.Deferred().reject('City not found');
 		},
 
@@ -158,7 +158,7 @@
 				this._mainChain(promise);
 			});
 			element.find('.weather__checkbox').click(() => {
-				this.settings.fixLocation = !this.settings.fixLocation; 
+				this.settings.fixLocation = !this.settings.fixLocation;
 				this.settings.fixLocation ? this._saveStorage(this.settings) : this._saveStorage({});
 				this._renderCheckBox(this.element)});
 		},
@@ -183,30 +183,32 @@
 		_render: function(obj) {
 			var element = $(this.element);
 			if (obj) {
-				var template = `<div class="weather__widget">
-				<img class="weather__checkbox" title="Fix this city" src="img/dialog_checkbox${this.settings.fixLocation ? '_selected' : ''}.png">
-				<span class="weather__name-city" title="Click to select another city">${obj.name}, ${obj.country}</span><br>
-				<div class="weather__wrapper">
-				<img class="weather__img" title="${obj.description}" src="img/${this._icons[obj.icon]}.png"><br>
-				<div class="weather__text__wrapper">
-				<span class="weather__main-temp">${obj.tempCur}&deg;${this.settings.tempUnit}</span><br>
-				${this.settings.displayDescription ? `<span class="weather__description">${obj.description}</span><br>` : ''}
-				${this.settings.displayMinMaxTemp ? `<span class="weather__info">min: ${obj.tempMin}&deg;${this.settings.tempUnit}</span>
-				<span class="weather__info">max: ${obj.tempMax}&deg;${this.settings.tempUnit}</span><br>` : ''}
-				${this.settings.displayWind ? `<span class="weather__info">Wind: ${obj.wind.speed}m/s</span><br>` : ''}
-				${this.settings.displayHumidity ? `<span class="weather__info">Humidity: ${obj.humidity}%</span><br>` : ''}
+				var template = `<div class="weather__widget row">
+				<div class="col s4">
+						<span class="weather__main-temp">${obj.tempCur}&deg;${this.settings.tempUnit}</span>
+				</div>
+				<div class="col s4">
+					<img class="weather__img" title="${obj.description}" src="img/${this._icons[obj.icon]}.png">
+				</div>
+				<div class="col s4">
+					<span class="weather__name-city" title="Click to select another city">${obj.name}, ${obj.country}</span><br>
+					<div class="weather__wrapper">
+					<div class="weather__text__wrapper">
+					${this.settings.displayDescription ? `<span class="weather__description">${obj.description}</span><br>` : ''}
+					${this.settings.displayMinMaxTemp ? `<span class="weather__info">min: ${obj.tempMin}&deg;${this.settings.tempUnit}</span>
+					<span class="weather__info">max: ${obj.tempMax}&deg;${this.settings.tempUnit}</span><br>` : ''}
+					${this.settings.displayWind ? `<span class="weather__info">Wind: ${obj.wind.speed}m/s</span><br>` : ''}
+					${this.settings.displayHumidity ? `<span class="weather__info">Humidity: ${obj.humidity}%</span><br>` : ''}
+					</div>
 				</div></div>
 				</div>`;
 				element.html($(template));
-				element.find('.weather__widget')
-				.css(`background`, `url("img/${obj.icon}.jpg")`)
-				.css('background-size', '100%');
 			}
 			else {
 				var template = `<div class="weather__sub">
 				<label class="weather__input__label">Input city:</label>
 				<input class="weather__input" type="text" autofocus>
-				</div>`;	
+				</div>`;
 				element.html($(template));
 				element.find('.weather__input').focus();
 			}
