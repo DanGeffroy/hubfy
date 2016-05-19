@@ -103,12 +103,12 @@ module.exports = function(passport) {
                 // set the user's local credentials
                 newUser.local.email    = email;
                 newUser.local.password = newUser.generateHash(password);
-                newUser.simpletodo = {'dragHandle': '.handle','fixed': true};
-                newUser.youtubeplayer = {'dragHandle': '.handle','fixed': true};
-                newUser.twitchchat = {'dragHandle': '.handle','fixed': true};
-                newUser.twitchplayer = {'dragHandle': '.handle','fixed': true};
-                newUser.weather = {'dragHandle': '.handle','fixed': true};
-                newUser.quicknote = {'dragHandle': '.handle','fixed': true};
+                newUser.simpletodo = {'dragHandle': '.handle','fixed': true, "sizey" : 2,"sizex" : 1, "row" : 3, "col" : 4};
+                newUser.youtubeplayer = {'dragHandle': '.handle','fixed': true, "sizey" : 2,"sizex" : 3, "row" : 1, "col" : 1};
+                newUser.twitchchat = {'dragHandle': '.handle','fixed': true, "sizey" : 2,"sizex" : 2, "row" : 1, "col" : 4};
+                newUser.twitchplayer = {'dragHandle': '.handle','fixed': true, "sizey" : 2,"sizex" : 3, "row" : 3, "col" : 1};
+                newUser.weather = {'dragHandle': '.handle','fixed': true, "sizey" : 1,"sizex" : 2, "row" : 4, "col" : 6};
+                newUser.quicknote = {'dragHandle': '.handle','fixed': true, "sizey" : 3,"sizex" : 2, "row" : 1, "col" : 6};
 
                 // save the user
                 newUser.save(function(err) {
