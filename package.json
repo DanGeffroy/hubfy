@@ -1,5 +1,6 @@
 {
-  "name": "node-authentication",
+  "name": "hubfy",
+  "version": "1.0.0",
   "main": "server.js",
   "dependencies" : {
     "express" : "*",

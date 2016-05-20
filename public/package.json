@@ -1,5 +1,5 @@
 {
-  "name": "angular2-quickstart",
+  "name": "hubfy-public",
   "version": "1.0.0",
   "scripts": {
     "tsc": "tsc",
