@@ -104,6 +104,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 
+
 input:not([type]):focus:not([readonly]) + label,
 input[type=text]:focus:not([readonly]) + label,
 input[type=password]:focus:not([readonly]) + label,
@@ -121,6 +122,10 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 .modal-content .btn{
     width: 100%;
+}
+
+.inputWhite{
+  color: white;
 }
 
 a {
