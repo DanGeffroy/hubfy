@@ -1,26 +1,26 @@
 
   <h4 class="white-text center-align">My hub</h4>
   <div *ngIf="user" class="grid" [ngGrid]="{'max_cols': 7,'max_rows': 0, 'auto_resize': true, 'row_height': 140}">
-    <div class="grid-item" [ngGridItem]="user.youtubeplayer" (onDragStop)="onDragStop($event,'youtubeplayer')" (onResizeStop)="onResizeStop($event,'youtubeplayer')" (onItemChange)="onItemChange($event,'youtubeplayer')">
+    <div class="grid-item" *ngIf="user.youtubeplayer" [ngGridItem]="user.youtubeplayer" (onDragStop)="onDragStop($event,'youtubeplayer')" (onResizeStop)="onResizeStop($event,'youtubeplayer')" (onItemChange)="onItemChange($event,'youtubeplayer')">
       <youtubeplayer></youtubeplayer>
     </div>
 
-    <div class="grid-item" [ngGridItem]="user.twitchplayer" (onDragStop)="onDragStop($event,'twitchplayer')" (onResizeStop)="onResizeStop($event,'twitchplayer')" (onItemChange)="onItemChange($event,'twitchplayer')">
+    <div class="grid-item" *ngIf="user.twitchplayer" [ngGridItem]="user.twitchplayer" (onDragStop)="onDragStop($event,'twitchplayer')" (onResizeStop)="onResizeStop($event,'twitchplayer')" (onItemChange)="onItemChange($event,'twitchplayer')">
       <twitchplayer></twitchplayer>
     </div>
 
-    <div class="grid-item" [ngGridItem]="user.twitchchat"  (onDragStop)="onDragStop($event,'twitchchat')" (onResizeStop)="onResizeStop($event,'twitchchat')" (onItemChange)="onItemChange($event,'twitchchat')">
+    <div class="grid-item" *ngIf="user.twitchchat" [ngGridItem]="user.twitchchat"  (onDragStop)="onDragStop($event,'twitchchat')" (onResizeStop)="onResizeStop($event,'twitchchat')" (onItemChange)="onItemChange($event,'twitchchat')">
       <twitchchat></twitchchat>
     </div>
 
-    <div class="grid-item todoList" [ngGridItem]="user.simpletodo"  (onDragStop)="onDragStop($event,'simpletodo')" (onResizeStop)="onResizeStop($event,'simpletodo')" (onItemChange)="onItemChange($event,'simpletodo')">
+    <div class="grid-item todoList" *ngIf="user.simpletodo" [ngGridItem]="user.simpletodo"  (onDragStop)="onDragStop($event,'simpletodo')" (onResizeStop)="onResizeStop($event,'simpletodo')" (onItemChange)="onItemChange($event,'simpletodo')">
       <simpletodo></simpletodo>
     </div>
 
-    <div class="grid-item" [ngGridItem]="user.weather"  (onDragStop)="onDragStop($event,'weather')" (onResizeStop)="onResizeStop($event,'weather')" (onItemChange)="onItemChange($event,'weather')">
+    <div class="grid-item" *ngIf="user.weather" [ngGridItem]="user.weather"  (onDragStop)="onDragStop($event,'weather')" (onResizeStop)="onResizeStop($event,'weather')" (onItemChange)="onItemChange($event,'weather')">
       <weather></weather>
     </div>
-    <div class="grid-item todoList" [ngGridItem]="user.quicknote"  (onDragStop)="onDragStop($event,'quicknote')" (onResizeStop)="onResizeStop($event,'quicknote')" (onItemChange)="onItemChange($event,'quicknote')">
+    <div class="grid-item todoList"  *ngIf="user.quicknote" [ngGridItem]="user.quicknote"  (onDragStop)="onDragStop($event,'quicknote')" (onResizeStop)="onResizeStop($event,'quicknote')" (onItemChange)="onItemChange($event,'quicknote')">
       <quicknote></quicknote>
     </div>
   </div>
