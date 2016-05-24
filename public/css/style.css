@@ -17,7 +17,14 @@
 }
 body {
     background-color: #1D1F21;
+    display: flex;
+min-height: 100vh;
+flex-direction: column;
 }
+
+  main {
+    flex: 1 0 auto;
+  }
 
 nav ul a,
 nav .brand-logo {
@@ -128,12 +135,17 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   color: white;
 }
 
+
 a {
   color: #ef6c00;
 }
 #paralax1{
      -webkit-filter:brightness(50%);
     filter: brightness(50%);
+}
+.appImg{
+  border-radius: 5px;
+  box-shadow: 0 6px 5px -5px rgba(0,0,0,0.15);
 }
 .buttonParalax{
     width: 150px;
@@ -180,7 +192,16 @@ a {
 	background-color: rgba(255,255,255, 0.1);
 }
 
-@media (max-width: 767px) {
+
+/* tablete */
+@media (max-width: 1024px) {
+  .appImg{
+    margin-top: 100px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
 	.grid {
 		width: 100% !important;
 		height: auto !important;
@@ -194,7 +215,14 @@ a {
 	.grid-item:last-child {
 		margin-bottom: 0;
 	}
+  .parallax-container .section{
+        padding-top: 20px;
+  }
+  .appImg{
+    margin-top: 20px;
+  }
 }
+
 
 /* ScrollBar stuff */
 ::-webkit-scrollbar {
