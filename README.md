@@ -42,6 +42,7 @@ The app is now running on : http://localhost:8080/
  - timer
  - G-map widget
  - Twitter
+ - discord
 
 Feel free to contribute! I will accept any pull request if they are intresting :D
 
@@ -73,5 +74,7 @@ you are done :D (you may need to drop the user db if you change it's model)
  - Make a new landing page with screen and texts
  - re-Make the weather widget using angular2
  - Make a live version of the app (without dbs)
+
+### I'll probably scrap all this project to make only a live version that will use cookies to save data (or maybe not :stuck_out_tongue_closed_eyes:)
 
 Made with :heart: by Dan
